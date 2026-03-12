@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#020617;
+position:sticky;
+top:0;
+}
+
+nav h2{
+color:#38bdf8;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* HERO */
+
+.hero{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+max-width:600px;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:12px 25px;
+background:#38bdf8;
+border:none;
+color:black;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* ABOUT */
+
+.about{
+padding:80px 10%;
+text-align:center;
+}
+
+.about h2{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.about p{
+max-width:700px;
+margin:auto;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+padding:80px 10%;
+}
+
+.portfolio h2{
+text-align:center;
+margin-bottom:40px;
+color:#38bdf8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.item{
+background:#020617;
+padding:10px;
+border-radius:8px;
+}
+
+.item img{
+width:100%;
+border-radius:5px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 10%;
+text-align:center;
+}
+
+.contact h2{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+max-width:500px;
+margin:10px auto;
+padding:10px;
+border:none;
+border-radius:5px;
+display:block;
+}
+
+.contact button{
+padding:10px 20px;
+background:#38bdf8;
+border:none;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>MyPortfolio</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#portfolio">Work</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Hello I'm <span>Your Name</span></h1>
+
+<p>Graphic Designer & Editor creating thumbnails, posters, and digital art.</p>
+
+<button onclick="scrollPortfolio()">View My Work</button>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About Me</h2>
+
+<p>
+I am a passionate graphic designer and video editor.
+I create thumbnails, posters, social media designs and digital edits.
+This portfolio shows my best creative work.
+</p>
+
+</section>
+
+<section class="portfolio" id="portfolio">
+
+<h2>My Work</h2>
+
+<div class="grid">
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Me</h2>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea placeholder="Your Message"></textarea>
+
+<button onclick="sendMessage()">Send Message</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 Your Name | Portfolio Website</p>
+
+</footer>
+
+<script>
+
+function scrollPortfolio(){
+document.getElementById("portfolio").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+function sendMessage(){
+alert("Message sent! (This is demo)");
+}
+
+</script>
+
+</body>
+
+</html>
