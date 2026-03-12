@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Portfolio</title>
+<title>Dipanshu Rawat | Graphic Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,12 +16,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Inter,sans-serif;
 }
 
 body{
-background:#0f172a;
-color:white;
+background:#ffffff;
+color:#111;
 }
 
 /* NAVBAR */
@@ -27,146 +30,132 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:#020617;
+padding:25px 8%;
+border-bottom:1px solid #eee;
 position:sticky;
 top:0;
+background:white;
+z-index:100;
 }
 
 nav h2{
-color:#38bdf8;
+font-weight:600;
 }
 
 nav ul{
-list-style:none;
 display:flex;
-gap:20px;
+gap:30px;
+list-style:none;
 }
 
-nav ul li a{
-color:white;
+nav a{
 text-decoration:none;
-font-size:16px;
+color:#111;
+font-size:15px;
 }
 
 /* HERO */
 
 .hero{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+padding:120px 8%;
+max-width:900px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero span{
-color:#38bdf8;
-}
-
-.hero p{
-max-width:600px;
+font-size:56px;
 margin-bottom:20px;
 }
 
-.hero button{
-padding:12px 25px;
-background:#38bdf8;
-border:none;
-color:black;
-font-size:16px;
+.hero p{
+font-size:20px;
+color:#555;
+}
+
+/* WORK GRID */
+
+.work{
+padding:80px 8%;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.project img{
+width:100%;
+border-radius:8px;
 cursor:pointer;
-border-radius:5px;
+transition:0.3s;
+}
+
+.project img:hover{
+transform:scale(1.03);
 }
 
 /* ABOUT */
 
 .about{
-padding:80px 10%;
-text-align:center;
+padding:120px 8%;
+max-width:700px;
 }
 
 .about h2{
+font-size:32px;
 margin-bottom:20px;
-color:#38bdf8;
 }
 
 .about p{
-max-width:700px;
-margin:auto;
-}
-
-/* PORTFOLIO */
-
-.portfolio{
-padding:80px 10%;
-}
-
-.portfolio h2{
-text-align:center;
-margin-bottom:40px;
-color:#38bdf8;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.item{
-background:#020617;
-padding:10px;
-border-radius:8px;
-}
-
-.item img{
-width:100%;
-border-radius:5px;
+color:#555;
+line-height:1.6;
 }
 
 /* CONTACT */
 
 .contact{
-padding:80px 10%;
-text-align:center;
+padding:120px 8%;
 }
 
 .contact h2{
-color:#38bdf8;
+font-size:32px;
 margin-bottom:20px;
 }
 
-.contact input,
-.contact textarea{
-width:100%;
-max-width:500px;
-margin:10px auto;
-padding:10px;
-border:none;
-border-radius:5px;
+.contact a{
 display:block;
-}
-
-.contact button{
-padding:10px 20px;
-background:#38bdf8;
-border:none;
-cursor:pointer;
+margin-bottom:10px;
+color:#111;
+text-decoration:none;
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
-padding:20px;
-background:#020617;
-margin-top:40px;
+padding:40px 8%;
+border-top:1px solid #eee;
+color:#777;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
 }
 
 </style>
@@ -177,11 +166,11 @@ margin-top:40px;
 
 <nav>
 
-<h2>MyPortfolio</h2>
+<h2>Dipanshu Rawat</h2>
 
 <ul>
+<li><a href="#work">Work</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#portfolio">Work</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -189,82 +178,91 @@ margin-top:40px;
 
 <section class="hero">
 
-<h1>Hello I'm <span>Your Name</span></h1>
+<h1>Graphic Designer & Editor</h1>
 
-<p>Graphic Designer & Editor creating thumbnails, posters, and digital art.</p>
+<p>
+Professional graphic designer specializing in YouTube thumbnails, posters
+and digital content design.
+</p>
 
-<button onclick="scrollPortfolio()">View My Work</button>
+</section>
+
+<section class="work" id="work">
+
+<div class="grid" id="gallery"></div>
 
 </section>
 
 <section class="about" id="about">
 
-<h2>About Me</h2>
+<h2>About</h2>
 
 <p>
-I am a passionate graphic designer and video editor.
-I create thumbnails, posters, social media designs and digital edits.
-This portfolio shows my best creative work.
+I'm Dipanshu Rawat, a professional graphic designer and editor.
+I create engaging YouTube thumbnails, posters and social media graphics
+that help creators grow their audience and improve their brand identity.
 </p>
-
-</section>
-
-<section class="portfolio" id="portfolio">
-
-<h2>My Work</h2>
-
-<div class="grid">
-
-<div class="item">
-<img src="https://via.placeholder.com/400">
-</div>
-
-<div class="item">
-<img src="https://via.placeholder.com/400">
-</div>
-
-<div class="item">
-<img src="https://via.placeholder.com/400">
-</div>
-
-<div class="item">
-<img src="https://via.placeholder.com/400">
-</div>
-
-</div>
 
 </section>
 
 <section class="contact" id="contact">
 
-<h2>Contact Me</h2>
+<h2>Contact</h2>
 
-<input type="text" placeholder="Your Name">
+<a href="mailto:yourgmail@gmail.com">
+📧 yourgmail@gmail.com
+</a>
 
-<input type="email" placeholder="Your Email">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button onclick="sendMessage()">Send Message</button>
+<a href="https://youtube.com/@yourchannel" target="_blank">
+▶️ Visit My YouTube Channel
+</a>
 
 </section>
 
 <footer>
 
-<p>© 2026 Your Name | Portfolio Website</p>
+<p>© 2026 Dipanshu Rawat</p>
 
 </footer>
 
+<div class="lightbox" id="lightbox">
+
+<img id="lightbox-img">
+
+</div>
+
 <script>
 
-function scrollPortfolio(){
-document.getElementById("portfolio").scrollIntoView({
-behavior:"smooth"
-});
+const gallery=document.getElementById("gallery");
+
+/* LOAD 100 WORKS */
+
+for(let i=1;i<=100;i++){
+
+let div=document.createElement("div");
+
+div.className="project";
+
+div.innerHTML=`<img src="works/work${i}.jpg">`;
+
+div.onclick=function(){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("lightbox-img").src=`works/work${i}.jpg`;
+
 }
 
-function sendMessage(){
-alert("Message sent! (This is demo)");
+gallery.appendChild(div);
+
+}
+
+/* CLOSE FULLSCREEN IMAGE */
+
+document.getElementById("lightbox").onclick=function(){
+
+this.style.display="none";
+
 }
 
 </script>
